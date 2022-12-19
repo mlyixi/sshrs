@@ -1,0 +1,25 @@
+[package]
+edition = "2021"
+name = "sshrs"
+version = "0.3.0"
+
+# [features]
+# default = ["jmp"]
+# jmp = []
+# nojmp = []
+[dependencies]
+anyhow = "1.0"
+crossterm = "0.25"
+shellexpand = "3.0"
+ssh_cfg = {git = "https://github.com/mlyixi/ssh_cfg"}
+tui = "0.19"
+unicode-width = "0.1.10"
+whoami = "1.2"
+[profile.release]
+codegen-units = 1
+debug = false
+debug-assertions = false
+lto = true
+opt-level = "z"
+panic = "abort"
+strip = true

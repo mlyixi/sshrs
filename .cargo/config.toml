@@ -1,0 +1,39 @@
+# following targets needs deb packages:
+# crossbuild-essential-arm64,crossbuild-essential-armhf
+[target.aarch64-unknown-linux-gnu] # aws t4g.nano
+linker = "aarch64-linux-gnu-gcc"
+[target.aarch64-unknown-linux-musl] # aws t4g.nano in alpine container
+linker = "aarch64-linux-gnu-gcc"
+[target.armv7-unknown-linux-gnueabihf] # raspberry pi 2-3-4
+linker = "arm-linux-gnueabihf-gcc"
+[target.armv7-unknown-linux-musleabihf] # raspberry pi 2-3-4
+linker = "arm-linux-gnueabihf-gcc"
+[target.arm-unknown-linux-gnueabihf] # raspberry pi 0-1
+linker = "arm-linux-gnueabihf-gcc"
+[target.arm-unknown-linux-musleabihf] # raspberry pi 0-1
+linker = "arm-linux-gnueabihf-gcc"
+
+# following targets needs deb packages:(need test)
+# gcc-mips-linux-gnu,gcc-mipsel-linux-gnu,gcc-mips64-linux-gnuabi64,gcc-mips64el-linux-gnuabi64
+# [target.mips-unknown-linux-gnu]
+# linker="mips-linux-gnu-gcc"
+# [target.mipsel-unknown-linux-gnu]
+# linker="mipsel-linux-gnu-gcc"
+# [target.mips64-unknown-linux-gnuabi64]
+# linker="mips64-linux-gnu-gcc"
+# [target.mips64el-unknown-linux-gnuabi64]
+# linker="mips64el-linux-gnu-gcc"
+
+# following targets needs deb packages:(need test)
+# download toolchain from musl.cc
+# [target.mipsel-unknown-linux-musl]
+# linker="/path/to/host"
+# [target.mips64el-unknown-linux-muslabi64]
+# linker="/path/to/host"
+# [target.mipsel-unknown-linux-musl]
+# linker="/path/to/host"
+# [target.mips64-unknown-linux-muslabi64]
+# linker="/path/to/host"
+
+# with uclibc
+# maybe use cross-rs like:https://github.com/cross-rs/cross or https://github.com/pdckxd/mips-uclibc-hello-rust
